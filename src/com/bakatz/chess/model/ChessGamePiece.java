@@ -625,7 +625,7 @@ public abstract class ChessGamePiece
     public boolean canMove( ChessGameBoard board, int row, int col )
     {
         updatePossibleMoves( board );
-        if ( possibleMoves.indexOf( row + "," + col ) > -1 )
+        if ( possibleMoves.contains(new ChessLocation(row, col)))//possibleMoves.indexOf( new ChessLocation(row  , col )) > -1 )
         {
             return testMoveForKingSafety( board, row, col );
         }
